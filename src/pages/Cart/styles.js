@@ -35,6 +35,8 @@ export const Info = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 0px;
+    text-align: center;
 
     p {
         font-size: 14px;
@@ -47,8 +49,26 @@ export const Info = styled.div`
     }
 `;
 
+export const Quantity = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-export const Quantity = styled.input`
+    input {
+        font-size: 16px;
+        color: #666;
+        padding: 6px;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #0676d9;
+        text-align: center;
+    }
+
+`;
+
+/*export const Quantity = styled.input`
     font-size: 16px;
     color: #666;
     padding: 6px;
@@ -57,7 +77,7 @@ export const Quantity = styled.input`
     height: 40px;
     border: 1px solid #0676d9;
     text-align: center;
-`;
+`;*/
 
 export const Subtotal = styled.div`
     display: flex;
@@ -72,10 +92,11 @@ export const Subtotal = styled.div`
 
 
 export const Total = styled.div`
-    display: flex;
+    display: block;
     font-weight: 100%;
     font-size: 16px;
     align-items: right;
+    text-align: right;
 
     p {
         margin-right: 2px;

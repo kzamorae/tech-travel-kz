@@ -11,6 +11,21 @@ function Cart() {
         total += el.quantity * el.price;
     });
 
+    function deleteItem(travel){
+        const copyCart = [...state.cart];
+        const newCart = [];
+        copyCart.forEach((el)=>{
+            if(el.id !== travel.id){
+                newCart.push(el);
+            }
+        });
+        console.log('Carrito',copyCart);
+        console.log('Carrito Final ',newCart);
+        setState({
+            cart: newCart,
+        });
+    }
+
     return (
         <Container>
             <ContainerList>
@@ -18,14 +33,15 @@ function Cart() {
                     <TravelItem key={el.id}>
                         <img src={el.photo} alt={el.title} />
                         <Info>
-                            <p>{el.title}</p>
-                            <strong>{el.price}</strong>
+                            <p>{el.title}</p>                      <strong>{el.price}</strong>
                         </Info>
-                        <Quantity readOnly type="number" value={el.quantity} />
+                        <Quantity>
+                            <input readOnly type="number" value={el.quantity}></input>
+                        </Quantity>
                         <Subtotal>
                             <p> $ {parseFloat(el.quantity * el.price).toFixed(2)} </p>
                             <div>
-                                <button type="button">
+                                <button type="button" onClick={() => deleteItem(el)}>
                                     <MdDelete size={24} color="#0676d9" />
                                 </button>
                             </div>

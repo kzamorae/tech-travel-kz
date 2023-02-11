@@ -44,7 +44,7 @@ export const Unit = styled.li`
     }
 
     p{
-        font-wight: 600;
+        font-weight: 600;
         font-size: 16px;
         color: #000;
         margin-top: 25px;
@@ -73,7 +73,7 @@ export const Unit = styled.li`
         span {
             flex: 1;
             text-align: center;
-            font-wight: 600;
+            font-weight: 600;
         }
 
     }
